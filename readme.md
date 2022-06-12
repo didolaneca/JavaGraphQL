@@ -5,3 +5,15 @@
 
 1. Create a `graphql` folder under the `resources` folder. The Spring Boot
     starter looks for ".GRAPHQLS" or ".GQLS" files in the folder.
+   - Add the following code to the graphql schema file
+     ```
+     type Query {
+      customers: [Customer]
+      customerById(id: ID): Customer
+     }
+     
+     type Customer {
+       id: ID
+       name: String
+     }
+     ```
