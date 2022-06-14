@@ -18,3 +18,35 @@
        name: String
      }
      ```
+2. Create a `@Service` CrmService to handle the Database logic as the following
+    ```
+    @Service
+    public class CrmService {
+    record Customer(Integer id, String name){}
+
+    public Customer getCustomerById(Integer id){
+        return new Customer(id, Math.random() > .5 ? "Name1" : "Name2");
+    }
+
+    public Collection<Customer> getCustomers(){
+        return List.of(new Customer(1, "Name1"), new Customer(2, "Name2"));
+    }
+    }
+    ```
+3. Add a `@Bean` of type `RuntimeWiringConfigurer` with the following configuration
+    ```
+     builder -> builder.type("Query", wiring -> wiring
+                .dataFetcher("customerById", env -> crm.getCustomerById(Integer.parseInt(env.getArgument("id"))))
+                .dataFetcher("customers", env -> crm.getCustomers()));
+    ```
+   Note: the CrmService must be injected into the `RuntimeWiringConfigurer` bean so we can use it
+4. Add `spring.graphql.graphiql.enabled=true` to the `application.properties` to enable the GraphQL client
+5. After we run the application and hit `localhost:8080/graphiql` , we should be able to query our API. 
+   Try the following query:
+   ```
+   query {
+    customers{
+      id
+    }
+   }
+   ```
