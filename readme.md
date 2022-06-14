@@ -1,7 +1,8 @@
 ## **GraphQL** implementation with Spring Boot
 
   Create a project from [Spring Initializr](start.spring.io)
-  <img width="1286" alt="Screen Shot 2022-06-11 at 7 59 43 PM" src="https://user-images.githubusercontent.com/20631927/173241657-bec97dde-d824-4476-9518-3b14bb72feb6.png">
+
+  <img width="1259" alt="Screen Shot 2022-06-14 at 5 00 06 PM" src="https://user-images.githubusercontent.com/20631927/173697522-70a12717-f345-4c59-af75-1a3de9417ddd.png">
 
 1. Create a `graphql` folder under the `resources` folder. The Spring Boot
     starter looks for ".GRAPHQLS" or ".GQLS" files in the folder.
