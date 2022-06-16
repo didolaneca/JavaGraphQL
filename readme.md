@@ -1,5 +1,5 @@
 ## **GraphQL** implementation with Spring Boot
-
+#### Using low level data wiring configurer
   Create a project from [Spring Initializr](start.spring.io)
 
   <img width="1259" alt="Screen Shot 2022-06-14 at 5 00 06 PM" src="https://user-images.githubusercontent.com/20631927/173697522-70a12717-f345-4c59-af75-1a3de9417ddd.png">
